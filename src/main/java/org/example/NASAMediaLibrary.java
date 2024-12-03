@@ -32,7 +32,7 @@ public class NASAMediaLibrary {
         parseJson(items, mediaType);
     }
 
-    public void parseJson(JSONArray items, String mediaType) {
+    private void parseJson(JSONArray items, String mediaType) {
         List<String> videoSuffixes = Arrays.asList(".mp4", ".avi", ".mov", ".mkv", ".wmv");
         List<String> imageSuffixes = Arrays.asList(".jpg", ".jpeg", ".png", ".bmp", ".tif");
 
@@ -63,7 +63,7 @@ public class NASAMediaLibrary {
         }
     }
 
-    public String getResponseData(String url) throws IOException {
+    private String getResponseData(String url) throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(url).build();
 
@@ -78,7 +78,7 @@ public class NASAMediaLibrary {
         }
     }
 
-    public void printItem(String title, String url) {
+    private void printItem(String title, String url) {
         System.out.println(title);
         System.out.println(url);
         System.out.println("---");
